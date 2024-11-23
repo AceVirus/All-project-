@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      flex
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/DataTables/datatables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="three.css" />
+    <title> Admin Dashboard</title>
+</head>
+<!-- body start -->
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-white" id="sidebar-wrapper">
+            <img src="image.jpg" alt="">
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
+                    class="WhatsApp"></i>
+                </div>  
+                
+            <div class="list-group list-group-flush my-3">
+                
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                        class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-project-diagram me-2"></i>Reports</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-chart-line me-2"></i>KYC List</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-paperclip me-2"></i>CDR Log</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold text-uppercase border-bottom"><i
+                        class="fas fa-shopping-cart me-2"></i>Recording Log</a>
+            </div>
+            <div class="list-group list-group-flush my-3">
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-gift me-2"></i>Lead Generation</a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- end Side bar -->
+
+        <!-- nav bar -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid shadow p-2 mb-3 bg-white">
+                    <span class="textOne">
+                        <i class='bx bx-user'></i>
+                       <a href="#" >Home</a> 
+                       <a href="#" >User</a>
+                       <a href="#" >Help</a>
+                    </span>                  
+                    <i class="fas fa-solid fa-layer-group primary-text fs-4 me-3" id="menu-toggle"></i>
+                </div>
+            </nav>
+
+            <!-- end nav bar -->
+
+            <div class="container-fluid px-4">
+                <h3 class="fs-4 mb-3">Overview</h3>
+                <div class="row g-3 my-3">
+                    <div class="col">
+                        <div class="p-3  shadow p-3 d-flex justify-content-around align-items-center rounded" style="background-color: rgb(205, 227, 243);">
+                            <div>
+                                <p class="fs-6">Pending</p>
+                                <h3 class="fs-2">1006</h3>
+                            </div>
+                            <i class="bx bxs-notepad fs-5 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="p-3  shadow p-3 d-flex justify-content-around align-items-center rounded" style="background-color: rgb(229, 226, 226);">
+                            <div>
+                                <p class="fs-6">Rescheduled</p>
+                                <h3 class="fs-2">1006</h3>
+                                
+                            </div>
+                            <i
+                            
+                                class="bx bxs-timer fs-5 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="p-3 shadow p-3 d-flex justify-content-around align-items-center rounded" style="background-color: rgb(205, 227, 243);">
+                            <div>
+                                <p class="fs-6">Verified</p>
+                                <h3 class="fs-2">1006</h3>
+                                
+                            </div>
+                            <i class="bx bxs-brightness fs-5 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="p-3  shadow p-3 d-flex justify-content-around align-items-center rounded"  style="background-color: rgb(229, 226, 226);">
+                            <div>
+                                
+                                <p class="fs-6">Approved</p>
+                                <h3 class="fs-2">1006</h3>
+                            </div>
+                            <i class="bx bxs-check-circle fs-5 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+
+                    <div class="col" >
+                        <div class="p-3 shadow p-3 d-flex justify-content-around align-items-center rounded" id="card" style="background-color: rgb(248, 226, 240);">
+                            <div>
+                                
+                                <p class="fs-6">Cancelled</p>
+                                <h3 class="fs-2">1006</h3>
+                            </div>
+                            <i class="bx bx-window-close fs-5 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="container border-radius" style="background-color: rgb(250, 248, 248)">
+                <div class="row my-5">
+                    <div class="col">
+                        <table id="dataTable" class="table table-hover" style="width: 100%;">
+                            <thead >
+                                <tr>
+                                    <th scope="col" width="50">Applied On</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Requested</th>
+                                    <th scope="col">Process</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">08/07/2024</th>
+                                    <td>Pranav Patil</td>
+                                    <td>Ppranav231@gmail.com</td>
+                                    <td>+91 7709901515</td>
+                                    <td>Pending</td>
+                                    <td><span class="mode mode_on">Yes</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">08/07/2024</th>
+                                    <td>Pranav Patil</td>
+                                    <td>Ppranav231@gmail.com</td>
+                                    <td>+91 7709901515</td>
+                                    <td>Pending</td>
+                                    <td><span class="mode mode_off">No</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">08/07/2024</th>
+                                    <td>Pranav Patil</td>
+                                    <td>Ppranav231@gmail.com</td>
+                                    <td>+91 7709901515</td>
+                                    <td>Pending</td>
+                                    <td><span class="mode mode_on">Yes</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">08/07/2024</th>
+                                    <td>pratik bamane</td>
+                                    <td>Ppranav231@gmail.com</td>
+                                    <td>+91 7709901515</td>
+                                    <td>Pending</td>
+                                    <td><span class="mode mode_off">No</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">08/07/2024</th>
+                                    <td>Uday mane</td>
+                                    <td>Ppranav231@gmail.com</td>
+                                    <td>+91 7709901515</td>
+                                    <td>Pending</td>
+                                    <td><span class="mode mode_on">Yes</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">08/07/2024</th>
+                                    <td>sourabh kadam</td>
+                                    <td>Ppranav231@gmail.com</td>
+                                    <td>+91 7709901515</td>
+                                    <td>Pending</td>
+                                    <td><span class="mode mode_on">Yes</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">08/07/2024</th>
+                                    <td>adity jadhav</td>
+                                    <td>Ppranav231@gmail.com</td>
+                                    <td>+91 7709901515</td>
+                                    <td>Pending</td>
+                                    <td><span class="mode mode_on">Yes</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">08/07/2024</th>
+                                    <td>Anitke pawar</td>
+                                    <td>Ppranav231@gmail.com</td>
+                                    <td>+91 7709901515</td>
+                                    <td>Pending</td>
+                                    <td><span class="mode mode_off">No</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">08/07/2024</th>
+                                    <td>Tejas choudhari</td>
+                                    <td>Ppranav231@gmail.com</td>
+                                    <td>+91 7709901515</td>
+                                    <td>Pending</td>
+                                    <td><span class="mode mode_off">No</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">08/07/2024</th>
+                                    <td>akshay devadiga </td>
+                                    <td>Ppranav231@gmail.com</td>
+                                    <td>+91 7709901515</td>
+                                    <td>Pending</td>
+                                    <td><span class="mode mode_on">Yes</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">08/07/2024</th>
+                                    <td>shubham tambwakar</td>
+                                    <td>Ppranav231@gmail.com</td>
+                                    <td>+91 7709901515</td>
+                                    <td>Pending</td>
+                                    <td><span class="mode mode_off">No</span></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">08/07/2024</th>
+                                    <td>nayan patankar</td>
+                                    <td>Ppranav231@gmail.com</td>
+                                    <td>+91 7709901515</td>
+                                    <td>Pending</td>
+                                    <td><span class="mode mode_off">No</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+    </div>
+    <script>
+        var el = document.getElementById("wrapper");
+        var toggleButton = document.getElementById("menu-toggle");
+
+        toggleButton.onclick = function ()
+         {
+            el.classList.toggle("toggled");
+         };
+       
+    </script>
+    <script src="/DataTables/datatables.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+          $("#dataTable").DataTable({
+            // "sDom":"frltip",
+            // "sFilter":"dataTables_filter my_search_class",
+            // "oLanguage":{
+            //   "sSearch":"Search:",
+            // },
+            dom: 'Bfrtip',
+            buttons: [
+                'csv'
+            ],
+        //     dom: '<"left"B>frtip',
+        //     buttons: [
+        //         'csv'
+        //   ],
+        //   dom: '<"right"f>rtip',
+            // dom:'<"top"lf>rt<"bottom"ip>',
+             ordering: false,
+             paging: true,
+        });
+        
+        });
+        // second code 
+//         new DataTable('#dataTable', {
+//             dom:'<"top">ct<"top"p><"clear">',
+//     ordering: false,
+//     paging: false,
+// });
+//     $("#filterbox").keyup(function(){
+//         DataTable.search(this.value).draw();
+
+//     });
+
+    // thard code 
+
+
+//     $(document).ready(function() {
+//         var dataTable=$("#dataTable").DataTable({
+//             "pageLength":5,
+//             'aoColumnDefs':[{
+//                 'bSortable':false,
+//                  'aTargets':['nosort'],
+//               }],
+//               aoColumnDefs:[
+//               {type:'date-dd-mm-yyyy',aTargets:[5]}
+//             ],
+//             "aoColumns":[
+//                 null,
+//                 null,
+//                 null,
+//                 null,
+//                 null,
+//                 null,
+//                 null
+//             ],
+//             "order":false,
+//             "bLengthChange":false,
+//             "dom":'<"top">ct<"top"p><"clear">'
+//             });
+//             $("#filterbox").keyup(function(){
+//          DataTable.search(this.value).draw();
+//     });
+// } );
+      </script>
+    </body>
+</html>
